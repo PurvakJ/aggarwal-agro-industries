@@ -34,17 +34,21 @@ function About() {
         rootMargin: '0px 0px -100px 0px'
       }
     );
-
-    elementsRef.current.forEach((element) => {
+  
+    // Store current elements in a variable
+    const currentElements = elementsRef.current;
+    
+    currentElements.forEach((element) => {
       if (element) observer.observe(element);
     });
-
+  
     return () => {
-      elementsRef.current.forEach((element) => {
+      // Use the stored variable in cleanup
+      currentElements.forEach((element) => {
         if (element) observer.unobserve(element);
       });
     };
-  }, []);
+  }, []); // Empty dependency array is fine since we're handling cleanup properly
 
   const addToRefs = (el, className = '') => {
     if (el && !elementsRef.current.includes(el)) {

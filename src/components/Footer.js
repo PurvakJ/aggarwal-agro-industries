@@ -2,7 +2,6 @@ import React from 'react';
 import './Footer.css';
 
 function Footer({ setCurrentPage }) {
-
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -116,4 +115,44 @@ function Footer({ setCurrentPage }) {
         </div>
       </div>
 
-      <div className="footer-bottom"> <div className="container"> <div className="bottom-content"> <div className="copyright"> <p>© {currentYear} Aggarwal Agro Industries. All Rights Reserved.</p> <div className="legal-links"> <a href="#" className="legal-link">Privacy Policy</a> <span className="separator">|</span> <a href="#" className="legal-link">Terms of Service</a> <span className="separator">|</span> <a href="#" className="legal-link">Disclaimer</a> </div> </div> <div className="footer-actions"> <button onClick={scrollToTop} className="back-to-top"> <span className="top-icon">⬆️</span> <span>Back to Top</span> </button> <div className="payment-methods"> <span className="payment-icon">💳</span> <span className="payment-icon">🏦</span> <span className="payment-icon">📱</span> <span className="payment-text">All Payment Methods Accepted</span> </div> </div> </div> </div> </div> <div className="footer-credits"> <div className="container"> <p className="credits-text"> Made with ❤️ for Indian Farmers | GST No: 03ACCPJ5936E3ZX | ISO 9001:2015 Certified | MSME Registered </p> </div> </div> </footer> ); } export default Footer;
+      <div className="footer-bottom">
+        <div className="container">
+          <div className="bottom-content">
+            <div className="copyright">
+              <p>© {currentYear} Aggarwal Agro Industries. All Rights Reserved.</p>
+              <div className="legal-links">
+                <button className="legal-link">Privacy Policy</button>
+                <span className="separator">|</span>
+                <button className="legal-link">Terms of Service</button>
+                <span className="separator">|</span>
+                <button className="legal-link">Disclaimer</button>
+              </div>
+            </div>
+            <div className="footer-actions">
+              <button onClick={scrollToTop} className="back-to-top">
+                <span className="top-icon">⬆️</span>
+                <span>Back to Top</span>
+              </button>
+              <div className="payment-methods">
+                <span className="payment-icon">💳</span>
+                <span className="payment-icon">🏦</span>
+                <span className="payment-icon">📱</span>
+                <span className="payment-text">All Payment Methods Accepted</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div className="footer-credits">
+        <div className="container">
+          <p className="credits-text">
+            Made with ❤️ for Indian Farmers | GST No: 03ACCPJ5936E3ZX | ISO 9001:2015 Certified | MSME Registered
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+export default Footer;

@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from 'react';
 import './Home.css';
 
 function Home() {
-  const sectionsRef = useRef([]);
   const elementsRef = useRef([]);
 
   useEffect(() => {
@@ -69,8 +68,11 @@ function Home() {
       }
     );
 
+    // Store elements in variable for cleanup
+    const currentElements = elementsRef.current;
+    
     // Observe all elements
-    elementsRef.current.forEach((element) => {
+    currentElements.forEach((element) => {
       if (element) observer.observe(element);
     });
 
@@ -91,7 +93,8 @@ function Home() {
 
     // Cleanup
     return () => {
-      elementsRef.current.forEach((element) => {
+      // Use stored variable for cleanup
+      currentElements.forEach((element) => {
         if (element) observer.unobserve(element);
       });
       document.body.removeChild(progressBar);
@@ -193,7 +196,6 @@ function Home() {
                 <div className="owner-info">
                   <h4>👤 Jatin Garg</h4>
                   <p className="contact-info">Founder & Managing Director <br></br>📞 Direct Line: 8146896807</p>
-
                 </div>
               </div>
             </div>
@@ -209,187 +211,182 @@ function Home() {
 
       {/* Products Section */}
       <section className="products-section">
-  <div className="container">
-    <div 
-      className="section-header lazy-fade-in" 
-      ref={el => addToRefs(el, 'lazy-fade-in')}
-    >
-      <h2>Our Tractor Trolley Range</h2>
-      <p className="section-subtitle">
-        High-Strength Tractor Trolleys for Agricultural & Industrial Use
-      </p>
-    </div>
+        <div className="container">
+          <div 
+            className="section-header lazy-fade-in" 
+            ref={el => addToRefs(el, 'lazy-fade-in')}
+          >
+            <h2>Our Tractor Trolley Range</h2>
+            <p className="section-subtitle">
+              High-Strength Tractor Trolleys for Agricultural & Industrial Use
+            </p>
+          </div>
 
-    <div className="products-grid">
+          <div className="products-grid">
+            {/* Standard Tractor Trolley */}
+            <div 
+              className="product-card lazy-scale-up" 
+              ref={el => addToRefs(el, 'lazy-scale-up')}
+            >
+              <div className="product-icon">🚜</div>
+              <h3>Standard Tractor Trolley</h3>
+              <p>
+                Robust and reliable tractor trolleys designed for everyday farming
+                operations and material transport.
+              </p>
+              <ul className="product-features">
+                <li>✓ 5–10 Ton Load Capacity</li>
+                <li>✓ Reinforced MS Steel Body</li>
+                <li>✓ Strong Chassis & Axle</li>
+                <li>✓ Long-lasting Paint Coating</li>
+              </ul>
+            </div>
 
-      {/* Standard Tractor Trolley */}
-      <div 
-        className="product-card lazy-scale-up" 
-        ref={el => addToRefs(el, 'lazy-scale-up')}
-      >
-        <div className="product-icon">🚜</div>
-        <h3>Standard Tractor Trolley</h3>
-        <p>
-          Robust and reliable tractor trolleys designed for everyday farming
-          operations and material transport.
-        </p>
-        <ul className="product-features">
-          <li>✓ 5–10 Ton Load Capacity</li>
-          <li>✓ Reinforced MS Steel Body</li>
-          <li>✓ Strong Chassis & Axle</li>
-          <li>✓ Long-lasting Paint Coating</li>
-        </ul>
-      </div>
+            {/* Hydraulic Tipper Tractor Trolley */}
+            <div 
+              className="product-card lazy-scale-up" 
+              ref={el => addToRefs(el, 'lazy-scale-up')}
+            >
+              <div className="product-icon">🚚</div>
+              <h3>Hydraulic Tipper Tractor Trolley</h3>
+              <p>
+                Hydraulic tipping tractor trolleys for fast and efficient unloading
+                of agricultural and construction materials.
+              </p>
+              <ul className="product-features">
+                <li>✓ Hydraulic Tipping System</li>
+                <li>✓ High-Quality Cylinder & Pump</li>
+                <li>✓ Safe Locking Mechanism</li>
+                <li>✓ Heavy-Duty Suspension</li>
+              </ul>
+            </div>
 
-      {/* Hydraulic Tipper Tractor Trolley */}
-      <div 
-        className="product-card lazy-scale-up" 
-        ref={el => addToRefs(el, 'lazy-scale-up')}
-      >
-        <div className="product-icon">🚚</div>
-        <h3>Hydraulic Tipper Tractor Trolley</h3>
-        <p>
-          Hydraulic tipping tractor trolleys for fast and efficient unloading
-          of agricultural and construction materials.
-        </p>
-        <ul className="product-features">
-          <li>✓ Hydraulic Tipping System</li>
-          <li>✓ High-Quality Cylinder & Pump</li>
-          <li>✓ Safe Locking Mechanism</li>
-          <li>✓ Heavy-Duty Suspension</li>
-        </ul>
-      </div>
+            {/* Heavy Duty Tractor Trolley */}
+            <div 
+              className="product-card lazy-scale-up" 
+              ref={el => addToRefs(el, 'lazy-scale-up')}
+            >
+              <div className="product-icon">🛠️</div>
+              <h3>Heavy-Duty Tractor Trolley</h3>
+              <p>
+                Extra-strong tractor trolleys built for heavy loads and rough working
+                conditions.
+              </p>
+              <ul className="product-features">
+                <li>✓ 10+ Ton Capacity Options</li>
+                <li>✓ Extra Thick Steel Plates</li>
+                <li>✓ Industrial Grade Axles</li>
+                <li>✓ Designed for Long Life</li>
+              </ul>
+            </div>
 
-      {/* Heavy Duty Tractor Trolley */}
-      <div 
-        className="product-card lazy-scale-up" 
-        ref={el => addToRefs(el, 'lazy-scale-up')}
-      >
-        <div className="product-icon">🛠️</div>
-        <h3>Heavy-Duty Tractor Trolley</h3>
-        <p>
-          Extra-strong tractor trolleys built for heavy loads and rough working
-          conditions.
-        </p>
-        <ul className="product-features">
-          <li>✓ 10+ Ton Capacity Options</li>
-          <li>✓ Extra Thick Steel Plates</li>
-          <li>✓ Industrial Grade Axles</li>
-          <li>✓ Designed for Long Life</li>
-        </ul>
-      </div>
-
-      {/* Customized Tractor Trolley */}
-      <div 
-        className="product-card lazy-scale-up" 
-        ref={el => addToRefs(el, 'lazy-scale-up')}
-      >
-        <div className="product-icon">🔧</div>
-        <h3>Customized Tractor Trolley</h3>
-        <p>
-          Tractor trolleys manufactured as per customer requirements and
-          specific usage needs.
-        </p>
-        <ul className="product-features">
-          <li>✓ Custom Size & Capacity</li>
-          <li>✓ Optional Side Panels</li>
-          <li>✓ Hydraulic / Non-Hydraulic</li>
-          <li>✓ Tailor-Made Solutions</li>
-        </ul>
-      </div>
-
-    </div>
-  </div>
-</section>
-
+            {/* Customized Tractor Trolley */}
+            <div 
+              className="product-card lazy-scale-up" 
+              ref={el => addToRefs(el, 'lazy-scale-up')}
+            >
+              <div className="product-icon">🔧</div>
+              <h3>Customized Tractor Trolley</h3>
+              <p>
+                Tractor trolleys manufactured as per customer requirements and
+                specific usage needs.
+              </p>
+              <ul className="product-features">
+                <li>✓ Custom Size & Capacity</li>
+                <li>✓ Optional Side Panels</li>
+                <li>✓ Hydraulic / Non-Hydraulic</li>
+                <li>✓ Tailor-Made Solutions</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Features Section */}
-<section className="features-section">
-  <div className="container">
-    <div 
-      className="section-header lazy-fade-in" 
-      ref={el => addToRefs(el, 'lazy-fade-in')}
-    >
-      <h2>Why Choose Aggarwal Agro?</h2>
-      <p className="section-subtitle">Excellence in Every Aspect of Our Service</p>
-    </div>
-    <div className="features-grid">
-      <div 
-        className="feature-card lazy-rotate-x" 
-        ref={el => addToRefs(el, 'lazy-rotate-x')}
-      >
-        <div className="feature-icon">⭐</div>
-        <h3>Premium Quality</h3>
-        <p>We use only ISI-certified materials and components for maximum durability</p>
-      </div>
-      
-      <div 
-        className="feature-card lazy-rotate-x" 
-        ref={el => addToRefs(el, 'lazy-rotate-x')}
-      >
-        <div className="feature-icon">⚙️</div>
-        <h3>Expert Engineering</h3>
-        <p>Our designs are optimized for performance, safety, and longevity</p>
-      </div>
-      
-      <div 
-        className="feature-card lazy-rotate-x" 
-        ref={el => addToRefs(el, 'lazy-rotate-x')}
-      >
-        <div className="feature-icon">🎯</div>
-        <h3>Custom Solutions</h3>
-        <p>Tailor-made trolleys to meet your specific agricultural requirements</p>
-      </div>
-      
-      <div 
-        className="feature-card lazy-rotate-x" 
-        ref={el => addToRefs(el, 'lazy-rotate-x')}
-      >
-        <div className="feature-icon">🔧</div>
-        <h3>After-Sales Support</h3>
-        <p>Comprehensive warranty and dedicated service network</p>
-      </div>
-      
-      <div 
-        className="feature-card lazy-rotate-x" 
-        ref={el => addToRefs(el, 'lazy-rotate-x')}
-      >
-        <div className="feature-icon">⏱️</div>
-        <h3>Timely Delivery</h3>
-        <p>Efficient production process ensuring on-time delivery</p>
-      </div>
-      
-      <div 
-        className="feature-card lazy-rotate-x" 
-        ref={el => addToRefs(el, 'lazy-rotate-x')}
-      >
-        <div className="feature-icon">💰</div>
-        <h3>Competitive Pricing</h3>
-        <p>Best value for money without compromising on quality</p>
-      </div>
-      
-      {/* New Feature 1 - Durability */}
-      <div 
-        className="feature-card lazy-rotate-x" 
-        ref={el => addToRefs(el, 'lazy-rotate-x')}
-      >
-        <div className="feature-icon">🛡️</div>
-        <h3>Weather-Resistant Design</h3>
-        <p>Built to withstand harsh agricultural environments and weather conditions</p>
-      </div>
-      
-      {/* New Feature 2 - Versatility */}
-      <div 
-        className="feature-card lazy-rotate-x" 
-        ref={el => addToRefs(el, 'lazy-rotate-x')}
-      >
-        <div className="feature-icon">🔄</div>
-        <h3>Multi-Purpose Utility</h3>
-        <p>Adaptable for various crops, terrains, and farming applications</p>
-      </div>
-    </div>
-  </div>
-</section>
+      <section className="features-section">
+        <div className="container">
+          <div 
+            className="section-header lazy-fade-in" 
+            ref={el => addToRefs(el, 'lazy-fade-in')}
+          >
+            <h2>Why Choose Aggarwal Agro?</h2>
+            <p className="section-subtitle">Excellence in Every Aspect of Our Service</p>
+          </div>
+          <div className="features-grid">
+            <div 
+              className="feature-card lazy-rotate-x" 
+              ref={el => addToRefs(el, 'lazy-rotate-x')}
+            >
+              <div className="feature-icon">⭐</div>
+              <h3>Premium Quality</h3>
+              <p>We use only ISI-certified materials and components for maximum durability</p>
+            </div>
+            
+            <div 
+              className="feature-card lazy-rotate-x" 
+              ref={el => addToRefs(el, 'lazy-rotate-x')}
+            >
+              <div className="feature-icon">⚙️</div>
+              <h3>Expert Engineering</h3>
+              <p>Our designs are optimized for performance, safety, and longevity</p>
+            </div>
+            
+            <div 
+              className="feature-card lazy-rotate-x" 
+              ref={el => addToRefs(el, 'lazy-rotate-x')}
+            >
+              <div className="feature-icon">🎯</div>
+              <h3>Custom Solutions</h3>
+              <p>Tailor-made trolleys to meet your specific agricultural requirements</p>
+            </div>
+            
+            <div 
+              className="feature-card lazy-rotate-x" 
+              ref={el => addToRefs(el, 'lazy-rotate-x')}
+            >
+              <div className="feature-icon">🔧</div>
+              <h3>After-Sales Support</h3>
+              <p>Comprehensive warranty and dedicated service network</p>
+            </div>
+            
+            <div 
+              className="feature-card lazy-rotate-x" 
+              ref={el => addToRefs(el, 'lazy-rotate-x')}
+            >
+              <div className="feature-icon">⏱️</div>
+              <h3>Timely Delivery</h3>
+              <p>Efficient production process ensuring on-time delivery</p>
+            </div>
+            
+            <div 
+              className="feature-card lazy-rotate-x" 
+              ref={el => addToRefs(el, 'lazy-rotate-x')}
+            >
+              <div className="feature-icon">💰</div>
+              <h3>Competitive Pricing</h3>
+              <p>Best value for money without compromising on quality</p>
+            </div>
+            
+            <div 
+              className="feature-card lazy-rotate-x" 
+              ref={el => addToRefs(el, 'lazy-rotate-x')}
+            >
+              <div className="feature-icon">🛡️</div>
+              <h3>Weather-Resistant Design</h3>
+              <p>Built to withstand harsh agricultural environments and weather conditions</p>
+            </div>
+            
+            <div 
+              className="feature-card lazy-rotate-x" 
+              ref={el => addToRefs(el, 'lazy-rotate-x')}
+            >
+              <div className="feature-icon">🔄</div>
+              <h3>Multi-Purpose Utility</h3>
+              <p>Adaptable for various crops, terrains, and farming applications</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Process Section */}
       <section className="process-section">

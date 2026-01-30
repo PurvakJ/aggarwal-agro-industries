@@ -51,12 +51,16 @@ function Workplace() {
       }
     );
 
-    elementsRef.current.forEach((element) => {
+    // Store elements in variable for cleanup
+    const currentElements = elementsRef.current;
+    
+    currentElements.forEach((element) => {
       if (element) observer.observe(element);
     });
 
     return () => {
-      elementsRef.current.forEach((element) => {
+      // Use stored variable for cleanup
+      currentElements.forEach((element) => {
         if (element) observer.unobserve(element);
       });
     };
@@ -268,7 +272,7 @@ function Workplace() {
                 ref={el => addToRefs(el, 'lazy-scale-up')}
               >
                 <div className="step-header">
-                  <div className="step-number">{step.number}</div>
+                  <div className="step-number">{index + 1}</div>
                   <div className="step-icon">{step.icon}</div>
                   <h3>{step.title}</h3>
                 </div>

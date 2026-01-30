@@ -34,13 +34,17 @@ function Contact() {
         rootMargin: '0px 0px -100px 0px'
       }
     );
-
-    elementsRef.current.forEach((element) => {
+  
+    // Store current elements in a variable for cleanup
+    const currentElements = elementsRef.current;
+    
+    currentElements.forEach((element) => {
       if (element) observer.observe(element);
     });
-
+  
     return () => {
-      elementsRef.current.forEach((element) => {
+      // Use the stored variable in cleanup
+      currentElements.forEach((element) => {
         if (element) observer.unobserve(element);
       });
     };
