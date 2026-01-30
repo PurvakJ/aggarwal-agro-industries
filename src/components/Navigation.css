@@ -1,0 +1,178 @@
+/* =========================
+   ROOT NAV
+========================= */
+.navigation {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(27, 60, 31, 0.85);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-container {
+  min-width: 100%;
+  padding: 15px 3%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* =========================
+   BRAND
+========================= */
+.nav-brand h2 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #FFD700, #4CAF50);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav-brand span {
+  display: block;
+  font-size: 0.85rem;
+  color: #ddd;
+  opacity: 0.8;
+}
+
+/* =========================
+   DESKTOP LINKS
+========================= */
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-link {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  opacity: 0.85;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #FFD700, #4CAF50);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  opacity: 1;
+  color: #FFD700;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* =========================
+   ACTION BUTTON
+========================= */
+.nav-actions .nav-btn {
+  padding: 12px 26px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  background: linear-gradient(135deg, #4CAF50, #2c5530);
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.nav-actions .nav-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(76, 175, 80, 0.4);
+}
+
+/* =========================
+   MOBILE BUTTON
+========================= */
+.mobile-menu-btn {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.mobile-menu-btn span {
+  width: 26px;
+  height: 3px;
+  background: #FFD700;
+  transition: all 0.3s ease;
+}
+
+/* =========================
+   MOBILE MENU
+========================= */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  padding: 25px;
+  background: linear-gradient(135deg, #1b3c1f, #2c5530);
+}
+
+.mobile-menu.open {
+  display: flex;
+}
+
+.mobile-link {
+  background: none;
+  border: none;
+  color: #fff;
+  padding: 15px 0;
+  font-size: 1.1rem;
+  display: flex;
+  gap: 12px;
+  cursor: pointer;
+  opacity: 0.9;
+  transition: all 0.3s ease;
+}
+
+.mobile-link.active,
+.mobile-link:hover {
+  color: #FFD700;
+  transform: translateX(10px);
+}
+
+.mobile-cta {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 12px;
+  border: none;
+  font-weight: 700;
+  background: #FFD700;
+  color: #2c5530;
+  cursor: pointer;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .nav-links,
+  .nav-actions {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    display: flex;
+  }
+}
