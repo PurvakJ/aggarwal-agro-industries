@@ -272,7 +272,7 @@ function Workplace() {
                 ref={el => addToRefs(el, 'lazy-scale-up')}
               >
                 <div className="step-header">
-                  <div className="step-number">{index + 1}</div>
+                  <div className="step-number">{}</div>
                   <div className="step-icon">{step.icon}</div>
                   <h3>{step.title}</h3>
                 </div>
