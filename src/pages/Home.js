@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import './Home.css';
 
-function Home() {
+function Home({ setCurrentPage }) {  // ← IMPORTANT: Make sure this line is EXACTLY this
   const elementsRef = useRef([]);
 
   useEffect(() => {
@@ -97,7 +97,9 @@ function Home() {
       currentElements.forEach((element) => {
         if (element) observer.unobserve(element);
       });
-      document.body.removeChild(progressBar);
+      if (progressBar && progressBar.parentNode) {
+        document.body.removeChild(progressBar);
+      }
       window.removeEventListener('scroll', updateProgress);
     };
   }, []);
@@ -109,6 +111,27 @@ function Home() {
       if (className) {
         el.classList.add(className);
       }
+    }
+  };
+
+  // Navigation handler functions
+  const handleExploreProducts = () => {
+    console.log('Navigate to workplace'); // Debug log
+    if (setCurrentPage) {
+      setCurrentPage('workplace');
+      window.scrollTo(0, 0);
+    } else {
+      console.error('setCurrentPage is not available');
+    }
+  };
+
+  const handleGetConsultation = () => {
+    console.log('Navigate to contact'); // Debug log
+    if (setCurrentPage) {
+      setCurrentPage('contact');
+      window.scrollTo(0, 0);
+    } else {
+      console.error('setCurrentPage is not available');
     }
   };
 
@@ -137,8 +160,18 @@ function Home() {
               className="hero-buttons lazy-fade-in" 
               ref={el => addToRefs(el, 'lazy-fade-in')}
             >
-              <button className="btn btn-primary">Explore Our Products</button>
-              <button className="btn btn-secondary">Get Free Consultation</button>
+              <button 
+                className="btn btn-primary" 
+                onClick={handleExploreProducts}
+              >
+                Explore Our Products
+              </button>
+              <button 
+                className="btn btn-secondary" 
+                onClick={handleGetConsultation}
+              >
+                Get Free Consultation
+              </button>
             </div>
             <div 
               className="hero-stats lazy-fade-in" 
@@ -472,14 +505,11 @@ function Home() {
               for their tractor trolley needs. Get a free consultation and quote today!
             </p>
             <div className="cta-buttons">
-              <button className="btn btn-primary btn-large">
+              <button className="btn btn-primary btn-large" onClick={() => window.location.href = 'tel:8146896807'}>
                 📞 Call Now: 8146896807
               </button>
-              <button className="btn btn-secondary btn-large">
+              <button className="btn btn-secondary btn-large" onClick={handleGetConsultation}>
                 📧 Request a Quote
-              </button>
-              <button className="btn btn-outline btn-large">
-                🗺️ Visit Our Factory
               </button>
             </div>
             <div className="cta-info">

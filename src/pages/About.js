@@ -446,14 +446,6 @@ function About() {
               for their agricultural transport needs. Experience the difference that 
               28 years of expertise makes.
             </p>
-            <div className="cta-buttons">
-              <button className="btn btn-primary btn-large">
-                📞 Contact Us: 8146896807
-              </button>
-              <button className="btn btn-secondary btn-large">
-                🏭 Visit Our Factory
-              </button>
-            </div>
             <div className="cta-info">
               <p><strong>📍 Factory Address:</strong> OPP. JAGDAMBAY COLONY, SEHAJPURA ROAD, Samana (147101), Distt Patiala</p>
               <p><strong>⏰ Working Hours:</strong> Monday to Saturday: 8:00 AM - 7:00 PM</p>

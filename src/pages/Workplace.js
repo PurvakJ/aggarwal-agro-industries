@@ -96,8 +96,6 @@ function Workplace() {
               className="hero-buttons lazy-fade-in" 
               ref={el => addToRefs(el, 'lazy-fade-in')}
             >
-              <button className="btn btn-primary">Schedule Factory Visit</button>
-              <button className="btn btn-secondary">Virtual Tour</button>
             </div>
           </div>
         </div>
@@ -505,18 +503,6 @@ function Workplace() {
                 <h4>Direct Factory Pricing</h4>
                 <p>Eliminate middlemen, get best prices</p>
               </div>
-            </div>
-            
-            <div className="visit-cta">
-              <button className="btn btn-primary btn-large">
-                🗓️ Schedule Factory Visit
-              </button>
-              <button className="btn btn-secondary btn-large">
-                📞 Call for Appointment: 8146896807
-              </button>
-              <button className="btn btn-outline btn-large">
-                🎥 Take Virtual Tour
-              </button>
             </div>
             
             <div className="visit-info">

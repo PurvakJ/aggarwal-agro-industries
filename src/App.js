@@ -13,7 +13,7 @@ function App() {
   const renderPage = () => {
     switch (currentPage) {
       case 'home':
-        return <Home />;
+        return <Home setCurrentPage={setCurrentPage} />;  // ← FIX: Pass the prop here
       case 'about':
         return <About />;
       case 'workplace':
