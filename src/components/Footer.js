@@ -95,14 +95,25 @@ function Footer({ setCurrentPage }) {
               <div className="footer-section">
                 <h4 className="section-title">Business Hours</h4>
                 <div className="business-hours">
-                  <div className="hours-item">
-                    <span className="hours-day">Mon – Fri</span>
-                    <span className="hours-time">8:00 AM – 7:00 PM</span>
-                  </div>
-                  <div className="hours-item">
-                    <span className="hours-day">Saturday</span>
-                    <span className="hours-time">9:00 AM – 5:00 PM</span>
-                  </div>
+                <div className="hours-item">
+  <span className="hours-day" style={{ color: "white" }}>
+    Mon – Fri
+  </span>
+
+  <span className="hours-time" style={{ color: "white" }}>
+    8:00 AM – 7:00 PM
+  </span>
+</div>
+
+<div className="hours-item">
+  <span className="hours-day" style={{ color: "white" }}>
+    Saturday
+  </span>
+
+  <span className="hours-time" style={{ color: "white" }}>
+    9:00 AM – 5:00 PM
+  </span>
+</div>
                   <div className="hours-item emergency">
                     <span className="hours-day">Emergency</span>
                     <span className="hours-time">24/7 Available</span>
@@ -120,13 +131,7 @@ function Footer({ setCurrentPage }) {
           <div className="bottom-content">
             <div className="copyright">
               <p>© {currentYear} Aggarwal Agro Industries. All Rights Reserved.</p>
-              <div className="legal-links">
-                <button className="legal-link">Privacy Policy</button>
-                <span className="separator">|</span>
-                <button className="legal-link">Terms of Service</button>
-                <span className="separator">|</span>
-                <button className="legal-link">Disclaimer</button>
-              </div>
+  
             </div>
             <div className="footer-actions">
               <button onClick={scrollToTop} className="back-to-top">

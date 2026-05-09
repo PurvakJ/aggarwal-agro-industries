@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Footer from './components/Footer';
 import Navigation from './components/Navigation';
 import Home from './pages/Home';
@@ -10,10 +10,18 @@ import './App.css';
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
 
+  // ✅ Scroll to top whenever page changes
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth', // remove if you want instant scroll
+    });
+  }, [currentPage]);
+
   const renderPage = () => {
     switch (currentPage) {
       case 'home':
-        return <Home setCurrentPage={setCurrentPage} />;  // ← FIX: Pass the prop here
+        return <Home setCurrentPage={setCurrentPage} />;
       case 'about':
         return <About />;
       case 'workplace':
@@ -21,7 +29,7 @@ function App() {
       case 'contact':
         return <Contact />;
       default:
-        return <Workplace />; // fallback
+        return <Workplace />;
     }
   };
 
@@ -36,7 +44,6 @@ function App() {
         {renderPage()}
       </main>
 
-      {/* ✅ pass setCurrentPage */}
       <Footer setCurrentPage={setCurrentPage} />
     </div>
   );

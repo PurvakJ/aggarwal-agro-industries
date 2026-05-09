@@ -90,7 +90,7 @@ function Workplace() {
               className="hero-subtitle lazy-fade-in" 
               ref={el => addToRefs(el, 'lazy-fade-in')}
             >
-              Where Precision Engineering Meets Agricultural Innovation
+              Powering Agriculture & Industry with Technology, Electricity & Premium Raw Materials
             </p>
             <div 
               className="hero-buttons lazy-fade-in" 
@@ -100,6 +100,77 @@ function Workplace() {
           </div>
         </div>
       </div>
+
+      {/* New Product Focus Section - Technology, Electricity & Raw Materials */}
+      <section className="product-focus-section">
+        <div className="container">
+          <div 
+            className="section-header lazy-fade-in" 
+            ref={el => addToRefs(el, 'lazy-fade-in')}
+          >
+            <h2>Our Core Product Verticals</h2>
+            <p className="section-subtitle">Technology | Electricity | Raw Material Supply</p>
+          </div>
+          
+          <div className="focus-grid">
+            <div 
+              className="focus-card lazy-scale-up" 
+              ref={el => addToRefs(el, 'lazy-scale-up')}
+            >
+              <div className="focus-icon">💻</div>
+              <h3>Technology Solutions</h3>
+              <p>Advanced technological products and solutions for modern agricultural and industrial applications</p>
+              <ul>
+                <li>Digital monitoring systems</li>
+                <li>Automation solutions</li>
+                <li>Precision control equipment</li>
+                <li>Smart farming technology</li>
+              </ul>
+            </div>
+            
+            <div 
+              className="focus-card lazy-scale-up" 
+              ref={el => addToRefs(el, 'lazy-scale-up')}
+            >
+              <div className="focus-icon">⚡</div>
+              <h3>Electricity Products</h3>
+              <p>High-quality electrical components and power solutions for reliable operations</p>
+              <ul>
+                <li>Power distribution units</li>
+                <li>Electrical control panels</li>
+                <li>Wiring and connectivity</li>
+                <li>Power backup solutions</li>
+              </ul>
+            </div>
+            
+            <div 
+              className="focus-card lazy-scale-up" 
+              ref={el => addToRefs(el, 'lazy-scale-up')}
+            >
+              <div className="focus-icon">🏭</div>
+              <h3>Raw Material Supply</h3>
+              <p>Premium raw materials for rally-making factories and manufacturing industries</p>
+              <ul>
+                <li>High-tensile steel & metals</li>
+                <li>Industrial-grade components</li>
+                <li>Specialized rally-making materials</li>
+                <li>Bulk material procurement</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div 
+            className="rally-supply-banner lazy-fade-in" 
+            ref={el => addToRefs(el, 'lazy-fade-in')}
+          >
+            <div className="banner-icon">🏁</div>
+            <div className="banner-content">
+              <h4>Preferred Raw Material Supplier for Rally-Making Factories</h4>
+              <p>We stand as a reliable raw material supplier for the rally-making industry, providing high-grade materials that meet stringent quality standards. Our supply chain ensures timely delivery and consistent quality for all rally manufacturing requirements.</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section className="facility-section">
         <div className="container">
@@ -127,7 +198,7 @@ function Workplace() {
               <p>
                 Strategically located in the industrial heartland of Rohtak, Haryana, 
                 our 10,000 square feet manufacturing facility represents the pinnacle 
-                of agricultural equipment production in Northern India.
+                of agricultural and industrial equipment production in Northern India.
               </p>
               
               <p>
@@ -137,7 +208,7 @@ function Workplace() {
               </p>
               
               <p>
-                From raw material inspection to final dispatch, every trolley undergoes 
+                From raw material inspection to final dispatch, every product undergoes 
                 27 quality checks across 6 production stages, ensuring that only 
                 the highest quality products leave our premises.
               </p>
@@ -172,8 +243,8 @@ function Workplace() {
               ref={el => addToRefs(el)}
             >
               <h3>10,000+</h3>
-              <p>Trolleys Manufactured</p>
-              <p className="stat-desc">Since 1995</p>
+              <p>Products Manufactured</p>
+              <p className="stat-desc">Across All Categories</p>
             </div>
             <div 
               className="stat" 
@@ -197,7 +268,7 @@ function Workplace() {
             >
               <h3>27</h3>
               <p>Quality Checks</p>
-              <p className="stat-desc">Per Trolley</p>
+              <p className="stat-desc">Per Product</p>
             </div>
           </div>
         </div>
@@ -218,13 +289,13 @@ function Workplace() {
               { 
                 icon: '📐', 
                 title: 'Design & Consultation', 
-                desc: 'Custom designs based on specific farming requirements and field conditions',
+                desc: 'Custom designs based on specific requirements across technology, electrical, and industrial applications',
                 details: ['Customer requirement analysis', 'Technical drawings', 'Material planning', 'Cost estimation']
               },
               { 
                 icon: '🔩', 
                 title: 'Material Selection', 
-                desc: 'Using ISI-certified high-tensile steel and premium components',
+                desc: 'Using ISI-certified high-tensile steel, premium electrical components, and industry-grade materials',
                 details: ['ISI-grade steel procurement', 'Component quality verification', 'Material testing', 'Storage management']
               },
               { 
@@ -236,8 +307,8 @@ function Workplace() {
               { 
                 icon: '🔧', 
                 title: 'Assembly', 
-                desc: 'Systematic assembly with attention to detail and precision',
-                details: ['Sub-assembly creation', 'Main assembly', 'Hydraulic system fitting', 'Electrical wiring']
+                desc: 'Systematic assembly with attention to detail and precision for all product lines',
+                details: ['Sub-assembly creation', 'Main assembly', 'Electrical system fitting', 'Quality checks']
               },
               { 
                 icon: '🎨', 
@@ -248,8 +319,8 @@ function Workplace() {
               { 
                 icon: '✅', 
                 title: 'Quality Testing', 
-                desc: 'Rigorous testing for strength, balance, and safety standards',
-                details: ['Load testing (up to 150% capacity)', 'Balance verification', 'Safety checks', 'Performance testing']
+                desc: 'Rigorous testing for strength, electrical safety, and performance standards',
+                details: ['Load testing', 'Electrical safety verification', 'Performance testing', 'Durability checks']
               },
               { 
                 icon: '🏭', 
@@ -319,8 +390,8 @@ function Workplace() {
               { 
                 icon: '⚖️', 
                 title: 'Testing Lab', 
-                desc: 'Comprehensive testing facility for load, stress, and performance',
-                features: ['Load testing up to 30 tons', 'Stress analysis', 'Balance testing', 'Safety checks']
+                desc: 'Comprehensive testing facility for load, electrical, stress, and performance',
+                features: ['Load testing up to 30 tons', 'Electrical safety testing', 'Stress analysis', 'Performance checks']
               },
               { 
                 icon: '📦', 
@@ -479,7 +550,7 @@ function Workplace() {
           >
             <h2>Experience Manufacturing Excellence</h2>
             <p className="visit-subtitle">
-              Witness firsthand how we transform raw steel into robust agricultural solutions
+              Witness firsthand how we transform raw materials into robust technology, electrical, and industrial solutions
             </p>
             
             <div className="visit-features">
@@ -496,7 +567,7 @@ function Workplace() {
               <div className="visit-feature">
                 <div className="feature-icon">🎯</div>
                 <h4>Custom Solutions</h4>
-                <p>Get personalized trolley designs for your needs</p>
+                <p>Get personalized designs for your needs</p>
               </div>
               <div className="visit-feature">
                 <div className="feature-icon">📞</div>
